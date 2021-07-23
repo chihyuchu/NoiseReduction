@@ -12,10 +12,10 @@ Current Algorithm:
 
 
 ## Evaluate algo on RGB Lena (512 x 512):
-PSNR of noisy image:             31.4529
-PSNR of gaussian filtered image: 31.0715
-PSNR of bilateral filtered image: 39.2667
-PSNR of NLMeans filtered image: 42.4844
+PSNR of noisy image:             31.4529  
+PSNR of gaussian filtered image: 31.0715  
+PSNR of bilateral filtered image: 39.2667  
+PSNR of NLMeans filtered image: 42.4844  
 
 Reference:
 1. https://github.com/GitHberChen/NL-means
