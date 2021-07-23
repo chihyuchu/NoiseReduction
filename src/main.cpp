@@ -25,7 +25,6 @@ int main()
 
 	cv::Mat test = srcImage(cv::Range(10, 20), cv::Range(31, 41));
 	
-
 	AddNoise(srcImage, nsyImage, 10.0, 0.0);
 
 	// --------------- Noise Reduction Algorithm -------------------
@@ -60,13 +59,10 @@ int main()
 	bilateral_PSNR = calcPSNR(srcImage, deNsy_Bilateral);
 	std::cout << "PSNR of bilateral filtered image: " << bilateral_PSNR << "\n";
 
-	// Calculate PSNR for recovery image with NLMeans
-
-
-
-
-
-
+	// Calculate PSNR for NLMeans filetered image
+	double NLMeans_PSNR;
+	NLMeans_PSNR = calcPSNR(srcImage, deNsy_NLMeans);
+	std::cout << "PSNR of NLMeans filtered image: " << NLMeans_PSNR << "\n";
 
 		
 	// --------------- Plot and Write Image-------------------
@@ -74,17 +70,20 @@ int main()
 	cv::namedWindow("noisy Image");
 	cv::namedWindow("gaussian filtered Image");
 	cv::namedWindow("bilateral filtered Image");
+	cv::namedWindow("NLMeans filtered Image");
 	//cv::namedWindow("NLMeans Image");
 
 	cv::imshow("source Image", srcImage);
 	cv::imshow("noisy Image", nsyImage);
 	cv::imshow("gaussian filtered Image", deNsy_Gaussian);
 	cv::imshow("bilateral filtered Image", deNsy_Bilateral);
+	cv::imshow("NLMeans filtered Image", deNsy_NLMeans);
 	//cv::imshow("NLMeans Image", nsyImage);
 	
 	cv::imwrite("./Img/test_nsy.jpg", nsyImage);
 	cv::imwrite("./Img/test_gauss.jpg", deNsy_Gaussian);
 	cv::imwrite("./Img/test_bilateral.jpg", deNsy_Bilateral);
+	cv::imwrite("./Img/test_NLMeans.jpg", deNsy_NLMeans);
 
 	cv::waitKey(0);
 

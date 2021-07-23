@@ -65,9 +65,6 @@ void AddNoise(cv::Mat& srcImage, cv::Mat& dstImage, double sigma, double pepper_
     }
 }
 
-
-
-
 static double getPSNR(cv::Mat& srcImage, cv::Mat& dstImage)
 {
     double sse = 0;
