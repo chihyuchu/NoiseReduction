@@ -18,7 +18,7 @@ PSNR of bilateral filtered image: 39.2667
 PSNR of NLMeans filtered image: 42.4844  
 
 NLMeans algo shows better texture rendering than bilateral filtering:
-![image](https://github.com/chihyuchu/NoiseReduction/tree/master/Img/comparison.png)
+![image](https://github.com/chihyuchu/NoiseReduction/blob/master/Img/comparison.png)
 
 
 Reference:
